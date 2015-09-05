@@ -12,7 +12,7 @@ var config = require('./config');
 
 // localhost
 
-var httpPort = process.env.PORT || 8080;
+var httpPort = process.env.PORT || 8000;
 var mongodbPort = 8888;
 
 /* 
@@ -27,7 +27,7 @@ var sendHTML = function( filePath, contentType, response ){
 
   console.log('sendHTML: ' + filePath) ;
 
-  path.exists(filePath, function( exists ) {
+  fs.exists(filePath, function( exists ) {
      
         if (exists) {
             fs.readFile(filePath, function(error, content) {
